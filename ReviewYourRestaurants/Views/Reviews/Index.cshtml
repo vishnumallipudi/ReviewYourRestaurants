@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ReviewYourRestaurants.Models.RestaurantReview>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>The Latest Reviews</h2>
+we are showing the latest @Model.Count() reviews
+<br />
+
+@VirtualPath
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@foreach (var item in Model) {
+   <div class="review">
+            <h4>@item.Name</h4>
+            <span>@item.Rating</span>
+            <p>@item.City, @item.Country</p>
+    </div>
+}
+
+

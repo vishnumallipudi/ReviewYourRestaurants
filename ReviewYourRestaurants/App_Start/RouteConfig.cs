@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace ReviewYourRestaurants
@@ -12,6 +8,10 @@ namespace ReviewYourRestaurants
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute("Cuisine",
+                "cuisine/{name}",
+                new { controller="Cuisine",action="Search",name=""});
 
             routes.MapRoute(
                 name: "Default",
