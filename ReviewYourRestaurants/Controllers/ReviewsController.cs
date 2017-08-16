@@ -1,7 +1,4 @@
-﻿using ReviewYourRestaurants.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace ReviewYourRestaurants.Controllers
 {
@@ -10,11 +7,8 @@ namespace ReviewYourRestaurants.Controllers
         // GET: Reviews
         public ActionResult Index()
         {
-            var model =
-                from r in _reviews
-                orderby r.Country
-                select r;
-            return View(model);
+            
+            return View();
         }
 
         // GET: Reviews/Details/5
@@ -55,16 +49,7 @@ namespace ReviewYourRestaurants.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View(); 
         }
 
         // GET: Reviews/Delete/5
@@ -89,35 +74,35 @@ namespace ReviewYourRestaurants.Controllers
             }
         }
 
-        static List<RestaurantReview> _reviews = new List<RestaurantReview>
-        {
-            new RestaurantReview {
-                Id=1,
-                Name="Cinnamon club",
-                City="Seattle",
-                Country="UK",
-                Rating=10
-            },
-            new RestaurantReview {
-                Id=2,
-                Name="Biryani Point",
-                City="Bellevue",
-                Country="USA",
-                Rating=10
-            },
-            new RestaurantReview {
-                Id=1,
-                Name="Paradise",
-                City="Milford",
-                Country="USA",
-                Rating=10
-            },new RestaurantReview {
-                Id=1,
-                Name="Shangrilla",
-                City="Bridgeport",
-                Country="USA",
-                Rating=9
-            }
-        };
+        //static List<RestaurantReview> _reviews = new List<RestaurantReview>
+        //{
+        //    new RestaurantReview {
+        //        Id=1,
+        //        Name="Cinnamon club",
+        //        City="Seattle",
+        //        Country="UK",
+        //        Rating=10
+        //    },
+        //    new RestaurantReview {
+        //        Id=2,
+        //        Name="Biryani Point",
+        //        City="Bellevue",
+        //        Country="USA",
+        //        Rating=10
+        //    },
+        //    new RestaurantReview {
+        //        Id=3,
+        //        Name="Paradise",
+        //        City="Milford",
+        //        Country="USA",
+        //        Rating=10
+        //    },new RestaurantReview {
+        //        Id=4,
+        //        Name="Shangrilla",
+        //        City="Bridgeport",
+        //        Country="USA",
+        //        Rating=9
+        //    }
+        //};
     }
 }
