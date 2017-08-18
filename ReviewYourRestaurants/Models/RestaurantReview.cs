@@ -9,7 +9,7 @@
         public string Body { get; set; }
         public string ReviewerName { get; set; }
 
-        public int RestuarantId { get; set; }
+        public int RestaurantId { get; set; }
 
     }
 }
