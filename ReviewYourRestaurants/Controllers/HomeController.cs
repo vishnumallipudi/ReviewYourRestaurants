@@ -23,7 +23,10 @@ namespace ReviewYourRestaurants.Controllers
                         Country = r.Country,
                         CountOfReviews = r.Reviews.Count()
                     });
-
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_RestaurantList", model);
+            }
             return View(model);
         }
 
